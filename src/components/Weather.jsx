@@ -19,7 +19,7 @@ const Weather = ()=>{
     const searchLocation = async (event) => {
         console.log(event.target.value);
         if (event.key === 'Enter') {
-          await axios.get(`http://127.0.0.1:8000/api/fetchWeather/${event.target.value}/`).then((response) => {
+          await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${event.target.value}&units=metric&appid=e24140ce16353431563ed70907d29f4a`).then((response) => {
             setData(response.data);
             console.log(response.data);
             // console.log(typeof response.data.timezone)
